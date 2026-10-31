@@ -341,8 +341,8 @@ browser = launch(stealth_args=False, args=["--fingerprint=12345"])
 #### geoip warnings
 
 When you call `cloakbrowser.launch(geoip=True)` without `proxy=`, the library
-logs a warning. Geoip timezone and locale resolution only runs at launch with
-the launch-time proxy. Per-context proxies set later with
+logs a warning. Without a launch proxy, geoip resolves timezone and locale
+from this machine's public IP. Per-context proxies set later with
 `browser.new_context(proxy=...)` will not trigger geoip resolution. Pass
 `proxy=` to `launch()` or set explicit `timezone=` / `locale=` to silence it.
 

@@ -281,8 +281,8 @@ describe("launch geoip warnings (unit)", () => {
   let mockChromium: any;
   const origBinaryPath = process.env.CLOAKBROWSER_BINARY_PATH;
   const warning =
-    "geoip=True without proxy= at launch — timezone/locale will default to " +
-    "UTC/en-US. Per-context proxies don't trigger geoip resolution. Pass " +
+    "geoip=True without proxy= at launch — timezone/locale come from this " +
+    "machine's public IP. Per-context proxies don't trigger geoip resolution. Pass " +
     "proxy= to launch() or set explicit timezone=/locale=.";
 
   beforeEach(() => {

@@ -132,8 +132,8 @@ export async function buildLaunchOptions(
   const { exitIp, ...resolved } = await maybeResolveGeoip(options);
   if (options.geoip && !options.proxy) {
     console.warn(
-      "geoip=True without proxy= at launch — timezone/locale will default to " +
-      "UTC/en-US. Per-context proxies don't trigger geoip resolution. Pass " +
+      "geoip=True without proxy= at launch — timezone/locale come from this " +
+      "machine's public IP. Per-context proxies don't trigger geoip resolution. Pass " +
       "proxy= to launch() or set explicit timezone=/locale=."
     );
   }

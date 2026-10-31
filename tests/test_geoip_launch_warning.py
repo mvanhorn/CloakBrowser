@@ -8,8 +8,8 @@ from cloakbrowser import launch, launch_async
 
 
 WARNING = (
-    "geoip=True without proxy= at launch — timezone/locale will default to "
-    "UTC/en-US. Per-context proxies don't trigger geoip resolution. Pass "
+    "geoip=True without proxy= at launch — timezone/locale come from this "
+    "machine's public IP. Per-context proxies don't trigger geoip resolution. Pass "
     "proxy= to launch() or set explicit timezone=/locale=."
 )
 

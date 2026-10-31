@@ -378,8 +378,8 @@ def launch(
     timezone, locale, exit_ip = maybe_resolve_geoip(geoip, proxy, timezone, locale, args)
     if geoip and not proxy:
         logger.warning(
-            "geoip=True without proxy= at launch — timezone/locale will default to "
-            "UTC/en-US. Per-context proxies don't trigger geoip resolution. Pass "
+            "geoip=True without proxy= at launch — timezone/locale come from this "
+            "machine's public IP. Per-context proxies don't trigger geoip resolution. Pass "
             "proxy= to launch() or set explicit timezone=/locale=."
         )
     proxy_kwargs, proxy_extra_args = _resolve_proxy_config(proxy, browser_version, license_key, release_channel)
@@ -520,8 +520,8 @@ async def launch_async(  # noqa: C901
     timezone, locale, exit_ip = await asyncio.to_thread(maybe_resolve_geoip, geoip, proxy, timezone, locale, args)
     if geoip and not proxy:
         logger.warning(
-            "geoip=True without proxy= at launch — timezone/locale will default to "
-            "UTC/en-US. Per-context proxies don't trigger geoip resolution. Pass "
+            "geoip=True without proxy= at launch — timezone/locale come from this "
+            "machine's public IP. Per-context proxies don't trigger geoip resolution. Pass "
             "proxy= to launch() or set explicit timezone=/locale=."
         )
     proxy_kwargs, proxy_extra_args = _resolve_proxy_config(proxy, browser_version, license_key, release_channel)

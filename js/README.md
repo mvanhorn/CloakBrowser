@@ -159,8 +159,8 @@ const context = await launchContext({ proxy: 'http://proxy:8080', geoip: true })
 #### geoip warnings
 
 When you call `launch({ geoip: true })` without `proxy`, the library logs a
-warning. Geoip timezone and locale resolution only runs at launch with the
-launch-time proxy. Per-context proxies set later with
+warning. Without a launch proxy, geoip resolves timezone and locale from this
+machine's public IP. Per-context proxies set later with
 `browser.newContext(...)` will not trigger geoip resolution. Pass `proxy` to
 `launch()` or set explicit `timezone` / `locale` to silence it.
 
